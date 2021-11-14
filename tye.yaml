@@ -1,0 +1,25 @@
+# tye application configuration file
+# read all about it at https://github.com/dotnet/tye
+#
+# when you've given us a try, we'd love to know what you think:
+#    https://aka.ms/AA7q20u
+#
+name: yarpdemo
+services:
+- name: appgateway
+  project: AppGateway/AppGateway.csproj
+- name: customersmicroservice
+  project: CustomersMicroservice/CustomersMicroservice.csproj
+  bindings:
+  - port: 5010
+    protocol: https
+- name: ordersmicroservice
+  project: OrdersMicroservice/OrdersMicroservice.csproj
+  bindings:
+  - port: 5020
+    protocol: https
+- name: productsmicroservice
+  project: ProductsMicroservice/ProductsMicroservice.csproj
+  bindings:
+  - port: 5030
+    protocol: https
