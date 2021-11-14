@@ -5,7 +5,7 @@
 Playing with Yarp reverse proxy
 ```
 
-> In this demo, i m using [Yarp](https://microsoft.github.io/reverse-proxy/) in order to build a lightweight app gateway intercepting requests and redirecting them to backend microservices.
+> In this demo, i m using [Yarp](https://microsoft.github.io/reverse-proxy) in order to build a lightweight app gateway intercepting requests and redirecting them to backend microservices.
 >
 > The solution is organized as follow :
 >
@@ -22,7 +22,7 @@ Playing with Yarp reverse proxy
 >>
 >> :two: browse the url `https://localhost:5000/api`
 >>
->> :three: refresh the url to see Yarp in action
+>> :three: refresh the url to see [Yarp](https://microsoft.github.io/reverse-proxy) in action
 >
 > ![TyeDashboard](Screenshots/TyeDashboard.png)
 >
