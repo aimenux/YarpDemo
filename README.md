@@ -1,3 +1,5 @@
+[![.NET](https://github.com/aimenux/YarpDemo/actions/workflows/ci.yml/badge.svg)](https://github.com/aimenux/YarpDemo/actions/workflows/ci.yml)
+
 # YarpDemo
 ```
 Playing with Yarp reverse proxy
@@ -14,7 +16,7 @@ Playing with Yarp reverse proxy
 >
 > The solution is using [Tye](https://github.com/dotnet/tye) in order to configure and run microservices and app gateway.
 >
-> > ![TyeDashboard](Screenshots/TyeDashboard.png)
+> ![TyeDashboard](Screenshots/TyeDashboard.png)
 >
 
 **`Tools`** : vs19, net core 3.1, tye, yarp
