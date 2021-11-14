@@ -16,6 +16,14 @@ Playing with Yarp reverse proxy
 >
 > The solution is using [Tye](https://github.com/dotnet/tye) in order to configure and run microservices and app gateway.
 >
+> In order to run the solution : 
+>
+>> :one: type `Tye Run` in your favorite terminal 
+>>
+>> :two: browse the url `https://localhost:5000/api`
+>>
+>> :three: refresh the url to see Yarp in action
+>
 > ![TyeDashboard](Screenshots/TyeDashboard.png)
 >
 
