@@ -1,4 +1,4 @@
-[![.NET](https://github.com/aimenux/YarpDemo/actions/workflows/ci.yml/badge.svg)](https://github.com/aimenux/YarpDemo/actions/workflows/ci.yml)
+[![.NET](https://github.com/aimenux/YarpDemo/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/aimenux/YarpDemo/actions/workflows/ci.yml)
 
 # YarpDemo
 ```
@@ -27,4 +27,4 @@ Playing with Yarp reverse proxy
 > ![TyeDashboard](Screenshots/TyeDashboard.png)
 >
 
-**`Tools`** : vs19, net core 3.1, tye, yarp
+**`Tools`** : net 6.0, tye, yarp
