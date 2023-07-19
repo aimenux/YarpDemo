@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,7 +30,8 @@ namespace CustomersMicroservice.Controllers
                 .Select(index => new Customer
                 {
                     CustomerId = index,
-                    FullName = Customers[index-1]
+                    FullName = Customers[index-1],
+                    Age = Random.Shared.Next(20, 80)
                 }).ToArray();
         }
     }

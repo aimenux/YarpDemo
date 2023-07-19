@@ -5,44 +5,43 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace AppGateway
+namespace AppGateway;
+
+public class Startup
 {
-    public class Startup
+    public Startup(IConfiguration configuration)
     {
-        public Startup(IConfiguration configuration)
+        Configuration = configuration;
+    }
+
+    public IConfiguration Configuration { get; }
+
+    public void ConfigureServices(IServiceCollection services)
+    {
+        services.AddControllers();
+
+        services
+            .AddReverseProxy()
+            .LoadFromConfig(Configuration.GetSection("ReverseProxy"));
+    }
+
+    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+    {
+        if (env.IsDevelopment())
         {
-            Configuration = configuration;
+            app.UseDeveloperExceptionPage();
         }
 
-        public IConfiguration Configuration { get; }
+        app.UseHttpsRedirection();
 
-        public void ConfigureServices(IServiceCollection services)
+        app.UseRouting();
+
+        app.UseAuthorization();
+
+        app.UseEndpoints(endpoints =>
         {
-            services.AddControllers();
-
-            services
-                .AddReverseProxy()
-                .LoadFromConfig(Configuration.GetSection("ReverseProxy"));
-        }
-
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-        {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-
-            app.UseHttpsRedirection();
-
-            app.UseRouting();
-
-            app.UseAuthorization();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapGet("", ctx => ctx.Response.WriteAsync("App Gateway"));
-                endpoints.MapReverseProxy();
-            });
-        }
+            endpoints.MapGet("", ctx => ctx.Response.WriteAsync("App Gateway"));
+            endpoints.MapReverseProxy();
+        });
     }
 }

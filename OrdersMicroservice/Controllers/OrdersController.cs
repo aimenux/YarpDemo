@@ -5,39 +5,37 @@ using System.Collections.Generic;
 using System.Linq;
 using OrdersMicroservice.Models;
 
-namespace OrdersMicroservice.Controllers
+namespace OrdersMicroservice.Controllers;
+
+[ApiController]
+[Route("api/[controller]")]
+public class OrdersController : ControllerBase
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class OrdersController : ControllerBase
+    private readonly ILogger<OrdersController> _logger;
+
+    public OrdersController(ILogger<OrdersController> logger)
     {
-        private readonly ILogger<OrdersController> _logger;
+        _logger = logger;
+    }
 
-        public OrdersController(ILogger<OrdersController> logger)
-        {
-            _logger = logger;
-        }
-
-        [HttpGet]
-        public IEnumerable<Order> GetOrders()
-        {
-            var rng = new Random(Guid.NewGuid().GetHashCode());
-            return Enumerable.Range(1, 10)
-                .Select(index => new Order
+    [HttpGet]
+    public IEnumerable<Order> GetOrders()
+    {
+        return Enumerable.Range(1, 10)
+            .Select(index => new Order
+            {
+                OrderId = index,
+                CustomerId = Random.Shared.Next(10),
+                OrderDate = DateTime.Now.AddDays(-index),
+                OrderLines = new List<OrderLine>
                 {
-                    OrderId = index,
-                    CustomerId = rng.Next(10),
-                    OrderDate = DateTime.Now.AddDays(-index),
-                    OrderLines = new List<OrderLine>
+                    new OrderLine
                     {
-                        new OrderLine
-                        {
-                            OrderLineId = rng.Next(10),
-                            ProductId = rng.Next(30),
-                            Quantity = rng.Next(5)
-                        }
+                        OrderLineId = Random.Shared.Next(10),
+                        ProductId = Random.Shared.Next(30),
+                        Quantity = Random.Shared.Next(5)
                     }
-                }).ToArray();
-        }
+                }
+            }).ToArray();
     }
 }
