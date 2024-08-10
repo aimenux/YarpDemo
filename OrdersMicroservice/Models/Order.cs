@@ -1,16 +1,12 @@
 using System;
 using System.Collections.Generic;
 
-namespace OrdersMicroservice.Models
+namespace OrdersMicroservice.Models;
+
+public sealed record Order
 {
-    public class Order
-    {
-        public int OrderId { get; set; }
-
-        public int CustomerId { get; set; }
-
-        public DateTime OrderDate { get; set; }
-
-        public ICollection<OrderLine> OrderLines { get; set; }
-    }
+    public int OrderId { get; init; }
+    public int CustomerId { get; init; }
+    public DateTime OrderDate { get; init; }
+    public ICollection<OrderLine> OrderLines { get; init; }
 }

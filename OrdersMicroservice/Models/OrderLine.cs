@@ -1,11 +1,8 @@
-namespace OrdersMicroservice.Models
-{
-    public class OrderLine
-    {
-        public int OrderLineId { get; set; }
-        
-        public int ProductId { get; set; }
+namespace OrdersMicroservice.Models;
 
-        public int Quantity { get; set; }
-    }
+public sealed record OrderLine
+{
+    public int OrderLineId { get; init; }
+    public int ProductId { get; init; }
+    public int Quantity { get; init; }
 }

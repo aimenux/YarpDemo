@@ -1,10 +1,8 @@
-namespace CustomersMicroservice.Models
-{
-    public class Customer
-    {
-        public int CustomerId { get; set; }
+namespace CustomersMicroservice.Models;
 
-        public string FullName { get; set; }
-        public int Age { get; set; }
-    }
+public sealed record Customer
+{
+    public int CustomerId { get; init; }
+    public string FullName { get; init; }
+    public int Age { get; init; }
 }

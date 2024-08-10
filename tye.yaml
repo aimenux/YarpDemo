@@ -6,22 +6,22 @@
 #
 name: yarpdemo
 services:
-- name: appgateway
+- name: app-gateway
   project: AppGateway/AppGateway.csproj
   bindings:
   - port: 5000
     protocol: https
-- name: customersmicroservice
+- name: customers-microservice
   project: CustomersMicroservice/CustomersMicroservice.csproj
   bindings:
   - port: 5010
     protocol: https
-- name: ordersmicroservice
+- name: orders-microservice
   project: OrdersMicroservice/OrdersMicroservice.csproj
   bindings:
   - port: 5020
     protocol: https
-- name: productsmicroservice
+- name: products-microservice
   project: ProductsMicroservice/ProductsMicroservice.csproj
   bindings:
   - port: 5030

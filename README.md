@@ -7,7 +7,7 @@ Playing with Yarp reverse proxy
 
 > In this demo, i m using [Yarp](https://microsoft.github.io/reverse-proxy) in order to build a lightweight app gateway intercepting requests and redirecting them to backend microservices.
 >
-> The solution is organized as follow :
+> The solution is organized as follows :
 >
 > - `AppGateway` : a webapi with yarp integration and configuration
 > - `CustomersMicroservice` : a webapi listing fake customers
@@ -27,4 +27,4 @@ Playing with Yarp reverse proxy
 > ![TyeDashboard](Screenshots/TyeDashboard.png)
 >
 
-**`Tools`** : net 6.0, tye, yarp
+**`Tools`** : net 8.0, yarp, tye

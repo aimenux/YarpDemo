@@ -1,0 +1,25 @@
+### 
+
+@LocalUrl = https://localhost:5000
+
+### Get random-route
+
+GET {{LocalUrl}}/api
+Accept: application/json
+
+### Get customers-route
+
+GET {{LocalUrl}}/customers
+Accept: application/json
+
+### Get orders-route
+
+GET {{LocalUrl}}/orders
+Accept: application/json
+
+### Get products-route
+
+GET {{LocalUrl}}/products
+Accept: application/json
+
+###

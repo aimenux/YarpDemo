@@ -1,11 +1,8 @@
-namespace ProductsMicroservice.Models
+namespace ProductsMicroservice.Models;
+
+public sealed record Product
 {
-    public class Product
-    {
-        public int ProductId { get; set; }
-
-        public string Name { get; set; }
-
-        public decimal Price { get; set; }
-    }
+    public int ProductId { get; init; }
+    public string Name { get; init; }
+    public decimal Price { get; init; }
 }
